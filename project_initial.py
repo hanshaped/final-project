@@ -9,8 +9,8 @@ from bs4 import BeautifulSoup
 import urllib.parse
 from multiprocessing import Pool
 
-def main():
+def transcription():
     sentences = input('Type or paste your sentence(s) below:\n')
     print(sentences)
     
-main()
+transcription()
