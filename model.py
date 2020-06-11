@@ -21,12 +21,13 @@ class Model:
         # words = input('Type or paste your sentence(s) below:\n')
         words_list = words.split()
         print("Getting your transcription ready, please wait")
+        transcribed_words = ""
     
         for word in words_list:
             page = requests.get('https://dictionary.cambridge.org/dictionary/english/' + str(word))
             tree = html.fromstring(page.content)
             Words = tree.xpath('//span[@class="ipa dipa lpr-2 lpl-1"]/text()')
             word1 = Words[1]
-            print(word1)
+            transcribed_words = transcribed_words + " " + word1
         
-        return(word1)
+        return(transcribed_words)

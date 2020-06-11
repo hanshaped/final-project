@@ -81,7 +81,7 @@ class View:
         self.button.pack(expand=True, side=TOP)
         
         self.info_label4 = tk.Label(root,
-                                    text='Your transription:',
+                                    text='Your transcription:',
                                     padx=15,
                                     pady=15,
                                     justify=CENTER,
@@ -101,22 +101,10 @@ class View:
                                             font=('times',12))
         self.transcription_label.pack(expand=True, fill=BOTH, side=TOP)
         
-        self.button_save = tk.Button(root,
-                                     text="Save your transcription",
-                                     padx=15,
-                                     pady=15,
-                                     command=self.save_transcription, 
-                                     fg='#e6f7ff', 
-                                     bg='#004466',
-                                     font=('times',11,'bold'))
-        self.button_save.pack(expand=True, side=TOP)
         
     def get_words(self):
         words = self.entry.get()
         self.controller.words_entered(words)
         
     def display_transcription(self, transcription):
-        self.transcription_label.configure(text="Transcription: " + transcription)
-    
-    def save_transcription(self, transcription):
-        self.filedialog.asksaveasfilename(initialdir = "/",title = "Select file",filetypes = (("txt files","*.txt"),("all files","*.*")))
+        self.transcription_label.configure(text=transcription)
