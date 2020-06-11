@@ -15,6 +15,6 @@ class Controller:
         
     def handle_transcription(self, transcription):
         self.view.display_transcription(transcription)
-        
-    def text_entered(self, text):
-        self.model.transcribe(text)
+    
+    def words_entered(self, words):
+        self.model.transcribe(words)

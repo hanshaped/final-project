@@ -116,7 +116,7 @@ class View:
         self.controller.words_entered(words)
         
     def display_transcription(self, transcription):
-        self.transcription_label.configure(text="Transcription:/n" + transcription)
+        self.transcription_label.configure(text="Transcription: " + transcription)
     
     def save_transcription(self, transcription):
         self.filedialog.asksaveasfilename(initialdir = "/",title = "Select file",filetypes = (("txt files","*.txt"),("all files","*.*")))
