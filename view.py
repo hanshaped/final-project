@@ -13,6 +13,7 @@ class View:
         self.root = root
         self.root.title("TransSCRIBE – Simple Transcription!")
         self.root.geometry("600x400")
+        self.root.iconphoto(False, tk.PhotoImage(file='graphics/chat.png'))
         self.controller = controller
         
         self.frame = tk.Frame(root)
@@ -24,9 +25,7 @@ class View:
         
         self.menubar = tk.Menu(root)
         filemenu = tk.Menu(self.menubar, tearoff=0)
-        filemenu.add_command(label="New", command=donothing)
-        filemenu.add_command(label="Open", command=donothing)
-        filemenu.add_command(label="Save", command=donothing)
+        filemenu.add_command(label="About the app", command=donothing)
         filemenu.add_separator()
         filemenu.add_command(label="Exit", command=root.quit)
         self.menubar.add_cascade(label="TransSCRIBE", menu=filemenu)
