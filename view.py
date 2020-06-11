@@ -11,16 +11,32 @@ from tkinter import BOTH, TOP, RIGHT, N, LEFT, CENTER, filedialog
 class View:
     def __init__(self, root, controller):
         self.root = root
-        self.root.title("TransSCRIBE – Check How To Pronounce!")
+        self.root.title("TransSCRIBE – Simple Transcription!")
         self.root.geometry("600x400")
         self.controller = controller
-        
-        # s = Style()
-        # s.configure('My.TFrame', background='#cceeff')
         
         self.frame = tk.Frame(root)
         self.frame.config(background='#e6f7ff')
         self.frame.pack(fill='both', expand=True)
+        
+        def donothing():
+            x = 0
+        
+        self.menubar = tk.Menu(root)
+        filemenu = tk.Menu(self.menubar, tearoff=0)
+        filemenu.add_command(label="New", command=donothing)
+        filemenu.add_command(label="Open", command=donothing)
+        filemenu.add_command(label="Save", command=donothing)
+        filemenu.add_separator()
+        filemenu.add_command(label="Exit", command=root.quit)
+        self.menubar.add_cascade(label="TransSCRIBE", menu=filemenu)
+        
+        helpmenu = tk.Menu(self.menubar, tearoff=0)
+        helpmenu.add_command(label="Help Index", command=donothing)
+        helpmenu.add_command(label="About...", command=donothing)
+        self.menubar.add_cascade(label="Help", menu=helpmenu)
+
+        self.root.config(menu=self.menubar)
         
         self.info_label1 = tk.Label(root,
                                     text='Welcome to TransSCRIBE!',
@@ -53,12 +69,12 @@ class View:
                                     font=('times',12,'bold'))
         self.info_label3.pack(expand=True, fill=BOTH, side=TOP)
         
-        self.entry = tk.Entry(root)
+        self.entry = tk.Entry(root, state='normal')
         self.entry.pack(expand=False, fill=BOTH, side=TOP, padx=15, pady=15)
         
         self.button = tk.Button(root,
                                 text="TransSCRIBE!", 
-                                command=self.get_word, 
+                                command=self.get_words, 
                                 fg='#e6f7ff', 
                                 bg='#004466',
                                 font=('times',11,'bold'))
@@ -95,12 +111,12 @@ class View:
                                      font=('times',11,'bold'))
         self.button_save.pack(expand=True, side=TOP)
         
-    def get_word(self):
-        word = self.entry.get()
-        self.controller.word_entered(word)
+    def get_words(self):
+        words = self.entry.get()
+        self.controller.words_entered(words)
         
     def display_transcription(self, transcription):
-        self.transcription_label.configure(text="Transcribtion:/n" + transcription)
+        self.transcription_label.configure(text="Transcription:/n" + transcription)
     
     def save_transcription(self, transcription):
         self.filedialog.asksaveasfilename(initialdir = "/",title = "Select file",filetypes = (("txt files","*.txt"),("all files","*.*")))

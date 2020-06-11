@@ -5,14 +5,16 @@ Created on Thu Jun 11 21:42:49 2020
 @author: black
 """
 
-from lxml  import html
-import requests
-
 class Model:
     def __init__(self, controller):
         self.controller = controller
         
-    def transcription():
+    def transcribe(self, words):
+        transcription = self.get_transcription(words)
+        self.controller.handle_translation(translation)
+        
+        
+    def get_transcription(self, words):
         words = input('Type or paste your sentence(s) below:\n')
         words_list = words.split()
         print("Getting your transcription ready, please wait")
@@ -24,8 +26,7 @@ class Model:
             word1 = Words[1]
             print(word1)
         
-model = Model(None)
-print(model.transcription())
+        return(word1)
         
-
-                
+model = Model(None)
+print(model.get_transcription("apple tree"))
