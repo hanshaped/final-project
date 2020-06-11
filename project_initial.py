@@ -31,7 +31,9 @@ from tkinter import Tk
     
 def transcription():
     words = input('Type or paste your sentence(s) below:\n')
-    ipa(words)
+    words_list = words.split()
+    print(words)
+#    ipa(words)
 
 #def fix_encoding(url):
  #   components = urllib.parse.urlsplit(url)
