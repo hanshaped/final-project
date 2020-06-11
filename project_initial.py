@@ -10,39 +10,39 @@ import urllib.parse
 from multiprocessing import Pool
 from tkinter import Tk
 
-def ipa(sentences):
-    print('Getting your transcription ...')
+#def ipa(sentences):
+#    print('Getting your transcription ...')
 
-    dic_url='https://dictionary.cambridge.org/dictionary/english/ist'
-    dic_content = get_content(dic_url)
+#    dic_url='https://dictionary.cambridge.org/dictionary/english/'
+#    dic_content = get_content(dic_url)
     
-    phonetic = dic_content.find_all('a')    
+#    phonetic = dic_content.find_all('a')    
 
-    phonemes = []
+#    phonemes = []
 
-    for word in words:
-        if len(word.get_text()) > 1:
-            base_url = 'https://dictionary.cambridge.org'
-            url = urllib.parse.urljoin(base_url, link['href'])
-            encoded_url = fix_encoding(url)
-            urls.append(encoded_url)
+#    for word in words:
+#        if len(word.get_text()) > 1:
+#            base_url = 'https://dictionary.cambridge.org'
+#            url = urllib.parse.urljoin(base_url, link['href'])
+#            encoded_url = fix_encoding(url)
+#            urls.append(encoded_url)
     
-    print('Your transcription: ')    
+#    print('Your transcription: ')    
     
 def transcription():
     words = input('Type or paste your sentence(s) below:\n')
     ipa(words)
 
-def fix_encoding(url):
-    components = urllib.parse.urlsplit(url)
-    components = list(components)
-    components[2] = urllib.parse.quote(components[2])
-    return urllib.parse.urlunsplit(components)
+#def fix_encoding(url):
+ #   components = urllib.parse.urlsplit(url)
+ #   components = list(components)
+ #   components[2] = urllib.parse.quote(components[2])
+ #   return urllib.parse.urlunsplit(components)
  
-def get_content(url):
-    response = urllib.request.urlopen(url)
-    data= response.read()
-    doc = BeautifulSoup(data, 'html.parser')
-    return doc.find(id = 'tresc_wlasciwa')    
+#def get_content(url):
+#    response = urllib.request.urlopen(url)
+#    data= response.read()
+#    doc = BeautifulSoup(data, 'html.parser')
+#    return doc.find(id = 'tresc_wlasciwa')    
 
 transcription()
