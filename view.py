@@ -101,7 +101,6 @@ class View:
                                             font=('times',12))
         self.transcription_label.pack(expand=True, fill=BOTH, side=TOP)
         
-        
     def get_words(self):
         words = self.entry.get()
         self.controller.words_entered(words)
