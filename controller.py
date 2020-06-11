@@ -12,3 +12,9 @@ class Controller:
     def __init__(self, root):
         self.model = Model(self)
         self.view = View(root, self)
+        
+    def handle_transcription(self, transcription):
+        self.view.display_transcription(transcription)
+        
+    def text_entered(self, text):
+        self.model.transcribe(text)
