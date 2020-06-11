@@ -12,13 +12,15 @@ class View:
     def __init__(self, root, controller):
         self.root = root
         self.root.title("TransSCRIBE – Check How To Pronounce!")
+        self.root.geometry("600x400")
         self.controller = controller
         
         # s = Style()
         # s.configure('My.TFrame', background='#cceeff')
         
         self.frame = tk.Frame(root)
-        self.frame.pack()
+        self.frame.config(background='#e6f7ff')
+        self.frame.pack(fill='both', expand=True)
         
         self.info_label1 = tk.Label(root,
                                     text='Welcome to TransSCRIBE!',
