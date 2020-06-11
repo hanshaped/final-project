@@ -8,6 +8,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 import urllib.parse
 from multiprocessing import Pool
+from tkinter import Tk
 
 def ipa(sentences):
     print('Getting your transcription ...')
@@ -15,22 +16,22 @@ def ipa(sentences):
     dic_url='https://dictionary.cambridge.org/dictionary/english/ist'
     dic_content = get_content(dic_url)
     
-    links = dic_content.find_all('a')    
+    phonetic = dic_content.find_all('a')    
 
-    urls = []
+    phonemes = []
 
-    for link in links:
-        if len(link.get_text()) > 1:
+    for word in words:
+        if len(word.get_text()) > 1:
             base_url = 'https://dictionary.cambridge.org'
-            url= urllib.parse.urljoin(base_url, link['href'])
+            url = urllib.parse.urljoin(base_url, link['href'])
             encoded_url = fix_encoding(url)
             urls.append(encoded_url)
     
     print('Your transcription: ')    
     
 def transcription():
-    sentences = input('Type or paste your sentence(s) below:\n')
-    ipa(sentences)
+    words = input('Type or paste your sentence(s) below:\n')
+    ipa(words)
 
 def fix_encoding(url):
     components = urllib.parse.urlsplit(url)
