@@ -69,7 +69,18 @@ class View:
                                     font=('times',12,'bold'))
         self.info_label3.pack(expand=True, fill=BOTH, side=TOP)
         
-        self.entry = tk.Entry(root, state='normal')
+        self.info_label4 = tk.Label(root,
+                                    text='Simply type or paste your sentence below:',
+                                    padx=15,
+                                    pady=15,
+                                    justify=CENTER,
+                                    wraplength=500,
+                                    fg='#004466',
+                                    bg='#e6f7ff',
+                                    font=('times',12))
+        self.info_label4.pack(expand=True, fill=BOTH, side=TOP)
+        
+        self.entry = tk.Entry(root, fg='#004466', font=('times',12))
         self.entry.pack(expand=False, fill=BOTH, side=TOP, padx=15, pady=15)
         
         self.button = tk.Button(root,
@@ -77,10 +88,12 @@ class View:
                                 command=self.get_words, 
                                 fg='#e6f7ff', 
                                 bg='#004466',
+                                activebackground='#33cccc',
+                                activeforeground='#ebfafa',
                                 font=('times',11,'bold'))
         self.button.pack(expand=True, side=TOP)
         
-        self.info_label4 = tk.Label(root,
+        self.info_label5 = tk.Label(root,
                                     text='Your transcription:',
                                     padx=15,
                                     pady=15,
@@ -89,7 +102,7 @@ class View:
                                     fg='#004466',
                                     bg='#e6f7ff',
                                     font=('times',13,'bold'))
-        self.info_label4.pack(expand=True, fill=BOTH, side=TOP)
+        self.info_label5.pack(expand=True, fill=BOTH, side=TOP)
         
         self.transcription_label = tk.Label(root,
                                             padx=15,
