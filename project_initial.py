@@ -14,28 +14,24 @@ def transcription():
     print(sentences)
 
 #def main():
-    #print('Getting staff urls ...')
+    #print('Getting your transcription ...')
 
-    #staff_url='http://wa.amu.edu.pl/wa/en/staff_list'
-   # staff_content = get_content(staff_url)
+    #dic_url='https://dictionary.cambridge.org/dictionary/english/ist'
+   # dic_content = get_content(dic_url)
     
-   # links = staff_content.find_all('a')    
+   # links = dic_content.find_all('a')    
 
    # urls = []
 
 #    for link in links:
   #      if len(link.get_text()) > 1:
-   #         base_url = 'http://wa.amu.edu.pl'
+   #         base_url = 'https://dictionary.cambridge.org'
    #         url= urllib.parse.urljoin(base_url, link['href'])
     #        encoded_url = fix_encoding(url)
      #       urls.append(encoded_url)
     
-#    print('Staff emails found:')    
+#    print('Your transcription: ')    
     
-
-#    mypool = Pool()
- #   mypool.map(print_details, urls)
-
 
 
 #def fix_encoding(url):
