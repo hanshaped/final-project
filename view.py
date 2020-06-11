@@ -54,7 +54,7 @@ class View:
         self.info_label3.pack(expand=True, fill=BOTH, side=TOP)
         
         self.entry = tk.Entry(root)
-        self.entry.pack(expand=True, fill=BOTH, side=TOP, padx=15, pady=15)
+        self.entry.pack(expand=False, fill=BOTH, side=TOP, padx=15, pady=15)
         
         self.button = tk.Button(root,
                                 text="TransSCRIBE!", 
