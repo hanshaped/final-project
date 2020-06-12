@@ -12,7 +12,7 @@ class View:
     def __init__(self, root, controller):
         self.root = root
         self.root.title("TransSCRIBE – Simple Transcription!")
-        self.root.geometry("600x400")
+        self.root.geometry("700x600")
         self.root.iconphoto(False, tk.PhotoImage(file='graphics/chat.png'))
         self.controller = controller
         
@@ -110,8 +110,19 @@ class View:
                                             wraplength=500,
                                             fg='#00aeff',
                                             bg='#e6f7ff',
-                                            font=('times',12))
+                                            font=('times',14))
         self.transcription_label.pack(expand=True, fill=BOTH, side=TOP)
+        
+        self.info_label6 = tk.Label(root,
+                                    text='Created by Karol Jakubik and Hanna Szczepanek',
+                                    padx=15,
+                                    pady=15,
+                                    justify=CENTER,
+                                    wraplength=500,
+                                    fg='#004466',
+                                    bg='#e6f7ff',
+                                    font=('times',8,'italic'))
+        self.info_label6.pack(expand=True, fill=BOTH, side=TOP)
         
     def get_words(self):
         words = self.entry.get()
