@@ -6,7 +6,8 @@ Created on Thu Jun 11 21:19:56 2020
 """
 
 import tkinter as tk
-from tkinter import BOTH, TOP, RIGHT, N, LEFT, CENTER, filedialog
+from tkinter import BOTH, TOP, CENTER, filedialog, NW
+from PIL import Image, ImageTk
 
 class View:
     def __init__(self, root, controller):

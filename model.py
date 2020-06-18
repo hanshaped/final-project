@@ -5,7 +5,7 @@ Created on Thu Jun 11 21:42:49 2020
 @author: black
 """
 
-from lxml  import html
+from lxml import html
 import requests
 import re
 
